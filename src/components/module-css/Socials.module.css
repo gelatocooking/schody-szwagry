@@ -1,0 +1,46 @@
+.socialsDiv {
+  display: flex;
+  min-width: 100%;
+  min-height: 250px;
+}
+.buttonLink {
+  border: none;
+  width: 100%;
+  min-height: 100%;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+}
+.socialsDiv > a {
+  display: inline-block;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  min-height: 100%;
+  background: none;
+}
+#fb {
+  /* background-color: rgb(71, 71, 167); */
+
+  background-image: url("../../assets/fb.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+#ig {
+  background-image: url("../../assets/ig.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+@media (max-width: 1000px) {
+  .socialsDiv {
+    min-height: px;
+    flex-direction: column;
+  }
+  .buttonLink {
+    min-width: 100%;
+    min-height: 200px;
+  }
+}

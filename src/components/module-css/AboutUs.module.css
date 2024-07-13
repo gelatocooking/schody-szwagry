@@ -1,0 +1,54 @@
+.aboutUsDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10%;
+  flex-wrap: wrap;
+  gap: 150px;
+  max-width: 100%;
+}
+.aboutUsSection {
+}
+.aboutUsDiv > h2 {
+  /* margin-top: 1%; */
+  text-align: center;
+}
+.aboutUsDiv > * {
+  border-radius: 0;
+  border-radius: 11%;
+  border-left: none;
+  border-right: none;
+  min-width: 40em;
+  /* justify-content: flex-start; */
+}
+.aboutUsDiv > *:hover {
+  scale: 1.05;
+}
+.contentDiv {
+  border: 2px solid white;
+  border-radius: 10%;
+  text-align: center;
+  max-width: 25%;
+
+  overflow: hidden;
+  max-height: 250px;
+  margin: 10%;
+}
+
+.text {
+  max-width: fit-content;
+}
+
+@media (max-width: 1150px) {
+  .aboutUsDiv > * {
+    min-width: 20em;
+  }
+}
+
+@media (max-width: 767px) {
+  .aboutUsDiv > * {
+    width: 300px;
+    height: 350px;
+    font-size: 20px;
+  }
+}

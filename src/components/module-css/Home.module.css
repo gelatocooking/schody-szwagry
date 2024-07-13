@@ -1,0 +1,14 @@
+.home > :nth-child(4) {
+  flex-direction: row-reverse;
+  background-color: #00000096;
+  /* box-shadow: 10px 10px 40px black; */
+}
+.home > :nth-child(4) img {
+  /* width: 10px; */
+  /* box-shadow: 10px 10px 40px black; */
+}
+@media (max-width: 768px) {
+  .home > :nth-child(4) {
+    flex-direction: column;
+  }
+}

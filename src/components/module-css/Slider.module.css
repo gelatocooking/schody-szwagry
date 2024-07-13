@@ -1,0 +1,156 @@
+.sliderSection {
+  background-color: #1f1f1f;
+}
+.currentImg {
+  border-radius: 10%;
+  margin: 10%;
+  display: flex;
+  width: 90%;
+  min-height: 100%;
+}
+.imgDiv {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+}
+.sliderDiv {
+  background-color: #1f1f1f;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.imageDiv {
+  padding: 2%;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+.img {
+  border-radius: 10%;
+  max-width: 400px;
+  max-height: 480px;
+  box-shadow: 10px 10px 40px black;
+  /* Opcjonalnie, dodaj przejście, aby cień pojawiał się płynnie */
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.buttonDiv {
+  margin-top: 5px;
+  display: flex;
+  justify-content: center;
+}
+.buttons {
+  width: 25px;
+  height: 25px;
+  border: solid 3px aliceblue;
+  border-radius: 50%;
+  margin: 5px;
+  background-color: rgba(255, 1, 1, 0.259);
+}
+.activButton {
+  background-color: rgb(255, 0, 0);
+  animation: activButton 2s;
+}
+.closingButton {
+  background-color: rgba(158, 13, 13, 0.259);
+  animation: closingButton 2s;
+}
+@media (max-width: 768px) {
+  section {
+    align-items: center;
+    flex-direction: column;
+  }
+  .info {
+    min-width: 90%;
+    margin-right: 0;
+  }
+  .infoHead {
+    display: flex;
+    justify-content: center;
+  }
+  .imageDiv {
+    display: flex;
+    justify-content: center;
+    min-width: 90%;
+  }
+  .skill > img {
+    width: 150px;
+    height: 100px;
+    box-shadow: none;
+  }
+}
+@media (max-width: 1200px) {
+  .info {
+    font-size: 1.4em;
+  }
+  .imageDiv > .img {
+    min-width: 350px;
+    max-width: 350px;
+    min-height: 430px;
+    max-height: 430px;
+  }
+}
+@media (max-width: 944px) {
+  .info {
+    font-size: 1.2em;
+  }
+}
+@media (max-width: 880px) {
+  .info {
+    font-size: 1em;
+  }
+  .imageDiv > .img {
+    min-width: 300px;
+    max-width: 300px;
+    min-height: 350px;
+    max-height: 350px;
+  }
+}
+
+.fadeIn {
+  animation: fadeIn 2s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes activButton {
+  from {
+    background-color: rgba(218, 15, 15, 0.259);
+  }
+  to {
+    background-color: rgb(255, 0, 0);
+  }
+}
+@keyframes closingButton {
+  from {
+    background-color: rgb(255, 0, 0);
+  }
+  to {
+    background-color: rgba(135, 255, 16, 0.259);
+  }
+}
+.fade-enter {
+  opacity: 0;
+  transition: opacity 1s ease-in;
+}
+
+.fade-enter-active {
+  opacity: 1;
+}
+
+.fade-exit {
+  opacity: 1;
+  transition: opacity 1s ease-out;
+}
+
+.fade-exit-active {
+  opacity: 0;
+}

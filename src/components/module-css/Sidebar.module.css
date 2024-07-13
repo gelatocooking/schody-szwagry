@@ -1,0 +1,70 @@
+/* src/components/Sidebar.css */
+.sidebar {
+  position: fixed;
+  right: -100px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  z-index: 9999;
+}
+
+.sidebar > :nth-child(1) {
+  background-color: #1877f2;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+.sidebar > :nth-child(2) {
+  background: linear-gradient(45deg, #833ab4, #c13584, #f56040, #ffdc80);
+  font-family: "Proxima Nova", "Roboto", sans-serif;
+}
+.sidebar > :nth-child(3) {
+  text-decoration: none;
+
+  background-color: rgba(66, 60, 60, 0.638);
+  font-family: "Proxima Nova", "Roboto", sans-serif;
+}
+.sidebarItem {
+  margin: 5px 0;
+  padding: 10px 20px;
+  width: 150px;
+  font-size: 18px;
+  background-color: #242425b3;
+  border: 1px solid #ccc;
+  border-radius: 5px 0 0 5px;
+  transition: transform 0.5s ease, background-color 0.5s ease;
+  cursor: pointer;
+  will-change: transform;
+  text-decoration: none;
+  color: white;
+}
+.sidebarItem > a {
+  text-decoration: none;
+  color: white;
+}
+.sidebarItem:hover {
+  transform: translateX(-100%) translateZ(0);
+}
+.sidebarItem .fade {
+  transform: translateX(-100%) translateZ(0);
+}
+#facebook {
+  background-color: #3b5998;
+  color: white;
+}
+
+#instagram {
+  background-color: #e4405f;
+  color: white;
+}
+
+#phone {
+  background-color: #25d366;
+  color: rgba(255, 255, 255, 0.128);
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    right: -105px;
+  }
+}
