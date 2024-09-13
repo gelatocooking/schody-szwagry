@@ -1,70 +1,67 @@
-/* src/components/Sidebar.css */
 .sidebar {
+  display: block;
+  font-size: clamp(14px, 1.5vw, 18px);
+  min-width: 150px;
   position: fixed;
-  right: -100px;
+  right: -100px; /* Adjust to make the sidebar more visible */
   top: 50%;
   transform: translateY(-50%);
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
+  transform: translateX(0);
   z-index: 9999;
+  animation: sidebarItemMove 10s infinite;
+  border: none;
+  gap: 3px;
 }
 
-.sidebar > :nth-child(1) {
+.sidebarItem {
+  box-shadow: 1px 1px 30px rgba(1, 1, 1, 0.5);
+  border-radius: 15px;
+  padding: 10px;
+  width: 100%;
+  color: aliceblue;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.5s ease;
+}
+
+.sidebarItem:nth-child(1) {
+  position: relative;
+  right: -30px; /* Adjust to make the sidebar more visible */
+
   background-color: #1877f2;
   font-family: "Helvetica Neue", Arial, sans-serif;
 }
-.sidebar > :nth-child(2) {
+
+.sidebarItem:nth-child(2) {
+  position: relative;
+  right: -20px; /* Adjust to make the sidebar more visible */
+
   background: linear-gradient(45deg, #833ab4, #c13584, #f56040, #ffdc80);
   font-family: "Proxima Nova", "Roboto", sans-serif;
 }
-.sidebar > :nth-child(3) {
-  text-decoration: none;
 
-  background-color: rgba(66, 60, 60, 0.638);
+.sidebarItem:nth-child(3) {
+  position: relative;
+  right: -10px; /* Adjust to make the sidebar more visible */
+
+  background-color: rgba(0, 255, 4, 0.638);
   font-family: "Proxima Nova", "Roboto", sans-serif;
+  z-index: 9999;
 }
-.sidebarItem {
-  margin: 5px 0;
-  padding: 10px 20px;
-  width: 150px;
-  font-size: 18px;
-  background-color: #242425b3;
-  border: 1px solid #ccc;
-  border-radius: 5px 0 0 5px;
-  transition: transform 0.5s ease, background-color 0.5s ease;
-  cursor: pointer;
-  will-change: transform;
-  text-decoration: none;
-  color: white;
-}
-.sidebarItem > a {
-  text-decoration: none;
-  color: white;
-}
+
 .sidebarItem:hover {
-  transform: translateX(-100%) translateZ(0);
+  transform: translateX(-30%);
 }
-.sidebarItem .fade {
-  transform: translateX(-100%) translateZ(0);
-}
-#facebook {
-  background-color: #3b5998;
-  color: white;
-}
-
-#instagram {
-  background-color: #e4405f;
-  color: white;
-}
-
-#phone {
-  background-color: #25d366;
-  color: rgba(255, 255, 255, 0.128);
-}
-
-@media (max-width: 768px) {
-  .sidebar {
-    right: -105px;
+@keyframes sidebarItemMove {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-30%);
+  }
+  100% {
+    transform: translateX(0);
   }
 }

@@ -1,43 +1,91 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl" xml:lang="pl">
   <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DTG2LKYSV4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
+  gtag('config', 'G-DTG2LKYSV4');
+</script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#1f1f1f" />
+    <link rel="canonical" href="https://schodyszwagry.pl/" hreflang="pl" />
+    <link rel="alternate" href="https://schodyszwagry.pl/" hreflang="pl" />
+    <link rel="preload" href="../src/assets/baner.webp" as="image"/>
+    <!-- Favicon and Touch Icons -->
+    <link rel="icon" href="/logomini.webp" sizes="32x32" />
+    <link rel="icon" href="/logomini.webp" sizes="192x192" />
+    <link rel="apple-touch-icon" href="logomini.webp" sizes="180x180" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="preload" href="./static/media/projects-d-2.webp" as="image">
+
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Schody Szwagry oferuje profesjonalne schody na wymiar, dostosowane do indywidualnych potrzeb i stylu klienta.">
+    <meta name="keywords" content="Schody Szwagry,schody na wymiar,schody na zamówienie, profesjonalne schody, schody drewniane, schody metalowe, projektowanie schodów">
+    <meta name="author" content="Schody Szwagry">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="googlebot" content="index, follow">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Profesjonalne Schody na Zamówienie - Schody Szwagry">
+    <meta property="og:description" content="Profesjonalne schody na wymiar, dostosowane do Twoich potrzeb.">
+    <meta property="og:url" content="https://schodyszwagry.pl/">
+    <meta property="og:image" content="/logomini.webp">
+    <meta property="og:locale" content="pl_PL">
+    <meta property="og:site_name" content="Schody Szwagry">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Schody na Wymiar - Schody Szwagry">
+    <meta name="twitter:description" content="Profesjonalne schody na zamówienie, dostosowane do Twoich potrzeb.">
+    <meta name="twitter:image" content="/logomini.webp">
+
+    <title>Schody na Wymiar - Schody Szwagry</title>
   </head>
   <body>
+
     <noscript>You need to enable JavaScript to run this app.</noscript>
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "Organization",
+        "name": "Schody Szwagry",
+        "url": "https://schodyszwagry.pl",
+        "sameAs": [
+          "https://www.facebook.com/schodyszwagry",
+          "https://www.instagram.com/schodyszwagry"
+        ],
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+48-123-456-789",
+          "contactType": "Customer Service"
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "ul. Przykładowa 1",
+          "addressLocality": "Warszawa",
+          "postalCode": "00-001",
+          "addressCountry": "PL"
+        },
+        "offers": {
+          "@type": "Service",
+          "serviceType": "Profesjonalne schody na zamówienie",
+          "provider": {
+            "@type": "Organization",
+            "name": "Schody Szwagry"
+          },
+          "description": "Projektowanie i wykonanie schodów dostosowanych do indywidualnych potrzeb."
+        },
+        "logo": "https://schodyszwagry.pl/logomini.webp"
+      }
+    </script>
+      
     <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
   </body>
 </html>

@@ -1,8 +1,7 @@
-// REUSABLE COMPONENT NAVBAR
 import React, { useState, useCallback } from "react";
 import { Link } from "react-router-dom";
 import styles from "./module-css/Navbar.module.css";
-import logo from "../assets/logo.png";
+import logo from "../assets/logo.webp";
 import classNames from 'classnames';
 
 const Navbar = React.memo(function Navbar() {
@@ -10,50 +9,25 @@ const Navbar = React.memo(function Navbar() {
   
   const toggleMenu = useCallback(() => {
     setIsOpen((prev) => !prev);
-  },[]);
+  }, []);
   
   const handleLinkClick = useCallback(() => {
     setIsOpen(false);
   }, []);
+  
   return (
-    <header>
-      <nav>
-        <Link to="/" className={`${styles.logoContainer} ${styles.fadeIn}`}>
+    <header className={styles.header}>
+      <nav className={styles.nav} aria-label="Main navigation">
+        <Link to="/" className={styles.logoContainer} aria-label="Home">
           <img
             src={logo}
-            alt="Logo"
-            className={`${styles.logo} ${styles.fadeIn}`}
+            alt="Stairway Logo"
+            className={classNames(styles.logo, styles.logoStairway)}
+            loading="lazy"
+          
           />
-          {/* CHANGE LOGO TEXT HERE  */}
-          {/* <span className={styles.logoText}>
-            Schody<strong>Szwagry</strong>
-          </span>{" "} */}
         </Link>
-        {/* <button
-          id="toggleNav"
-          className={classNames(styles.hamburger, styles.fadeIn, {
-            [styles.off]: isOpen,
-            [styles.walkIn]: isOpen
-          })}
-          onClick={toggleMenu}
-        >
-          <span>☰</span>
-        </button> */}
-        {/* <ul */}
-          {/* className={`${styles.navList} ${styles.fadeIn} ${ */}
-            {/* isOpen ? `${styles.show} ${styles.walkIn}` : "" */}
-          {/* }`} */}
-        {/* > */}
-          {/* <li onClick={handleLinkClick} className={styles.link}> */}
-            {/* <Link to="/">Głowna</Link> */}
-          {/* </li> */}
-          {/* <li onClick={handleLinkClick} className={styles.link}> */}
-            {/* <Link to="/galeria">Galeria</Link> */}
-          {/* </li> */}
-          {/* <li onClick={handleLinkClick} className={styles.link}>
-            <Link to="/kontakt">Kontakt</Link>
-          </li> */}
-        {/* </ul> */}
+       
       </nav>
     </header>
   );

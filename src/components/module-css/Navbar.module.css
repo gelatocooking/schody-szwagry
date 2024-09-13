@@ -1,48 +1,67 @@
-/* Navbar.module.css */
 nav {
+  overflow-y: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  /* padding: 30px; */
   gap: 50px;
   max-width: 100%;
   background-color: #1f1f1f;
   border-bottom: 1px double rgba(255, 255, 255, 0.644);
   color: white;
-  font-size: 30px;
   transition: background-color 0.3s ease;
-  /* box-shadow: 6px 6px 9px rgba(0, 0, 0, 0.2); */
-  /* box-shadow: 12px 12px 50px rgba(0, 0, 0, 0.4); */
-  /* box-shadow: 6px 6px 0px rgba(0, 0, 0, 0.2); */
-  /* box-shadow: 0px 0px 0px -3px rgba(255, 255, 255, 0.216), */
-  /* 6px 6px rgba(0, 0, 0, 1); */
-  /* box-shadow: 6px 6px 0px rgba(0, 0, 0, 1); */
 }
 
-nav > a {
+nav a {
+  display: flex;
+  justify-content: center;
+  align-self: center;
   text-decoration: none;
   color: inherit;
 }
+
 .logoContainer {
-  /* border: 1px solid rgba(255, 255, 255, 0.146); */
   display: flex;
   max-width: 30%;
   max-height: 20%;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   cursor: pointer;
+  overflow-y: hidden;
 }
 
 .logo {
-  max-width: 90%;
+  max-width: 100%;
   padding: 10%;
   max-height: 100%;
   transition: transform 0.3s ease;
 }
 
-.logoContainer:hover span {
-  transform: scale(1.1);
-  /* transform: rotate(90deg); */
+/* Nowa animacja */
+.logoStairway {
+  animation: logoStairway 2s ease forwards;
+}
+
+@keyframes logoStairway {
+  0% {
+    transform: translateY(100px) scale(0.5);
+    opacity: 0;
+  }
+  30% {
+    transform: translateY(0) scale(0.7);
+    opacity: 0.7;
+  }
+  60% {
+    transform: translateY(0) scale(0.85);
+    opacity: 0.9;
+  }
+  80% {
+    transform: translateY(-10px) scale(0.95);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
 }
 
 .navList {
@@ -53,12 +72,6 @@ nav > a {
   transition: opacity 0.5s ease;
 }
 
-.show {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  opacity: 1;
-}
 .navList li {
   margin: 0 10px;
   transition: transform 0.3s ease;
@@ -82,31 +95,15 @@ nav > a {
 
 .hamburger {
   display: none;
-
   background: none;
-
-  /* border: 2px dotted rgba(255, 0, 0, 0.611); */
-
   width: 50px;
   padding: 1%;
   border-radius: 55%;
-  font-size: 15px;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.3s ease;
-  /* border: 5px double rgba(255, 0, 0, 0.369); */
-}
-.hamburger > span {
-  font-size: 24px;
-}
-.hamburger:hover {
-  background-color: #555;
-  transform: rotate(360deg);
 }
 
 @media (max-width: 768px) {
-  .navbar {
-    font-size: 24px;
-  }
   .hamburger {
     display: block;
     color: white;
@@ -138,6 +135,7 @@ nav > a {
     max-width: 35%;
   }
 }
+
 .fadeIn {
   animation: fadeIn 2s ease-in-out forwards;
 }
@@ -149,23 +147,4 @@ nav > a {
   to {
     opacity: 1;
   }
-}
-
-@keyframes walkIn {
-  from {
-    width: 0;
-    height: 150px;
-    opacity: 0;
-    visibility: hidden;
-  }
-  to {
-    width: 50%;
-    height: 150px; /* Ustaw odpowiednią maksymalną wysokość */
-    opacity: 1;
-    visibility: visible;
-  }
-}
-
-.walkIn {
-  animation: walkIn 1s ease forwards;
 }

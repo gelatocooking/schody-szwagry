@@ -1,22 +1,21 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Modal from "react-modal";
 import style from "./module-css/Galerry.module.css";
 
-// Konfiguracja domyślnego elementu modalnego
 Modal.setAppElement("#root");
 
 interface GalleryInsideProps {
-      tab: string[];
-      title:string;
-
+  tab: string[];
+  title: string;
 }
 
 const GalleryInside: React.FC<GalleryInsideProps> = (props) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState("");
-  const [visibleRange, setVisibleRange] = useState([0, 4]); // Początkowy zakres widocznych zdjęć (0 do 4)
+  const [visibleCount, setVisibleCount] = useState(4);
+  const [visibleRange, setVisibleRange] = useState<[number, number]>([0, visibleCount]);
 
-  const openModal = (src:string) => {
+  const openModal = (src: string) => {
     setSelectedImage(src);
     setIsOpen(true);
   };
@@ -29,47 +28,72 @@ const GalleryInside: React.FC<GalleryInsideProps> = (props) => {
   const showPrevImages = () => {
     setVisibleRange((prevRange) => {
       const start = Math.max(prevRange[0] - 1, 0);
-      const end = Math.max(prevRange[1] - 1, 4);
+      const end = Math.max(prevRange[1] - 1, visibleCount);
       return [start, end];
     });
   };
 
   const showNextImages = () => {
     setVisibleRange((prevRange) => {
-      const start = Math.min(prevRange[0] + 1, props.tab.length - 4);
+      const start = Math.min(prevRange[0] + 1, props.tab.length - visibleCount);
       const end = Math.min(prevRange[1] + 1, props.tab.length);
       return [start, end];
     });
   };
 
+  useEffect(() => {
+    const handleResize = () => {
+      const newVisibleCount = window.innerWidth <= 768 ? 3 : 4;
+      setVisibleCount(newVisibleCount);
+      setVisibleRange([0, newVisibleCount]);
+    };
+
+    window.addEventListener("resize", handleResize);
+    handleResize();
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
-    <div className={style.yearly}>
-      <h3>{props.title}</h3>
+    <div className={style.gallery}>
+      <h3 className={style.title}>{props.title}</h3>
       <div className={style.imageContainer}>
+        <button
+          onClick={showPrevImages}
+          className={`${style.scrollButton} ${style.leftButton}`}
+          aria-label="Pokaż poprzednie zdjęcia"
+        >
+          ◄
+        </button>
         <div className={style.images}>
           {props.tab
             .slice(visibleRange[0], visibleRange[1])
-            .map((src, index) => {
-              return (
+            .map((src, index) => (
+              <div
+                className={style.imageWrapper}
+                key={visibleRange[0] + index}
+                onClick={() => openModal(src)}
+                role="button"
+                tabIndex={0}
+                aria-label={`Otwórz zdjęcie ${visibleRange[0] + index + 1}`}
+              >
                 <img
                   className={style.photo}
-                  key={visibleRange[0] + index}
                   src={src}
-                  alt={`Image ${visibleRange[0] + index + 1}`}
-                  onClick={() => openModal(src)}
+                  alt={`Zdjęcie ${visibleRange[0] + index + 1}`}
+                  loading="lazy"
+                  srcSet={`${src} 1x, ${src} 2x`}  // Zakładając, że masz wersje w wyższej rozdzielczości
                 />
-              );
-            })}
+              </div>
+            ))}
         </div>
-        <div className={style.switchButtons}>
-          <button onClick={showPrevImages} className={style.scrollButton}>
-            cofnij
-          </button>
-
-          <button onClick={showNextImages} className={style.scrollButton}>
-            dalej
-          </button>
-        </div>
+        <button
+          onClick={showNextImages}
+          className={`${style.scrollButton} ${style.rightButton}`}
+          aria-label="Pokaż następne zdjęcia"
+        >
+          ►
+        </button>
       </div>
 
       <Modal
@@ -78,14 +102,19 @@ const GalleryInside: React.FC<GalleryInsideProps> = (props) => {
         contentLabel="Fullscreen Image"
         className={style.modal}
         overlayClassName={style.overlay}
+        aria={{
+          labelledby: "imageTitle",
+          describedby: "imageDescription"
+        }}
       >
-        <button onClick={closeModal} className={style.closeButton}>
-          Zamknij
+        <button onClick={closeModal} className={style.closeButton} aria-label="Zamknij">
+          ×
         </button>
         <img
           src={selectedImage}
-          alt="Fullscreen"
+          alt="Pełnoekranowe zdjęcie"
           className={style.fullscreenImage}
+          id="imageTitle"
         />
       </Modal>
     </div>

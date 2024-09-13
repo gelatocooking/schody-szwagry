@@ -1,9 +1,9 @@
 import Card from "./Card";
 import styles from "./module-css/Card.module.css";
 import offert from "../assets/offer.png";
-import png from "../assets/projects-4.jpg";
-import png2 from "../assets/projects-3.jpg";
-import png3 from "../assets/projects-2.jpg";
+import png from "../assets/projekty/projects-t-1.webp";
+import png2 from "../assets/projekty/projects-t-4.webp";
+import png3 from "../assets/projekty/projects-t-5.webp";
 import { Link } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
 import camera from "../assets/camera.png";
@@ -39,7 +39,7 @@ const Cards = () => {
     }, 5000); // Change background every 5 seconds
 
     return () => clearInterval(interval);
-  }, []);
+  }, [images]);
 
   return (
     <section className={styles.cardsSection}>
@@ -56,15 +56,16 @@ const Cards = () => {
       />
 
       <div className={styles.Cards}>
-        <Link to="/galeria">
+        <Link to="/galeria" aria-label="Zobacz naszą galerię">
           <Card
             name={"Galeria"}
             icon={camera}
             text={
-              "Zajrzyj do naszej galerii aby zobaczyć jakie realizacje schodów stworzyliśmy na przestrzeni czasu!"
+              "Zajrzyj do naszej galerii, aby zobaczyć, jakie schody na zamówienie stworzyliśmy na przestrzeni czasu!"
             }
           />
         </Link>
+     
       </div>
     </section>
   );

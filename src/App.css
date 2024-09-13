@@ -7,14 +7,15 @@
 .App {
   min-height: 100%;
   max-height: max-content;
-  font-size: 34px;
-  background-color: #000000ef;
+  /* font-size: 34px; */
+  background-color: #1f1f1f;
   min-width: 100%;
   /* background-image: url("./assets/mainbackground.png"); */
   background-repeat: repeat-y;
   box-sizing: border-box;
   /* overflow-x: hidden; */
 }
+
 section {
   min-width: 100%;
   /* border: none; */
@@ -34,6 +35,9 @@ section {
 section:last-child {
   padding: 0;
 }
+body {
+  overflow-x: hidden;
+}
 strong {
   color: red;
 }
@@ -47,11 +51,11 @@ strong {
 }
 @media (max-width: 1070px) {
   .App {
-    font-size: 32px;
+    /* font-size: 32px; */
   }
 }
 @media (max-width: 768px) {
   .App {
-    font-size: 18px;
+    /* font-size: 18px; */
   }
 }

@@ -1,53 +1,90 @@
-.infosec {
-  background-color: black;
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.hidden {
+  opacity: 0;
+  transform: translateX(0);
+}
+
+.infosec {
+  min-width: 100%;
+  display: flex;
+  border-bottom: 2px solid white;
+  background-color: black;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+}
+
 .info {
-  font-size: 1em;
-  max-width: 90%;
+  min-width: 40%;
   margin-top: 10%;
   text-align: center;
   gap: 20px;
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: all 1s ease-out;
 }
-/* .infoDiv {
-  max-width: 80%;
-  background-color: #000000;
-  border-left: 1px solid white;
-  border-right: 1px solid white;
-  box-shadow: 0px 0px 100px rgba(79, 79, 79, 0.259);
 
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-} */
+.info h1 {
+  text-align: center;
+}
+
 .text {
   margin-top: 10px;
   min-width: 100%;
-  text-align: center; /* Dodaj to stylowanie, jeśli jeszcze go nie ma */
+  text-align: center;
   word-wrap: break-word;
 }
+
 .imgDiv {
   box-sizing: border-box;
   display: flex;
   justify-content: center;
   max-width: 90%;
   margin: 10%;
+  opacity: 0;
+  transform: translateX(100%);
+  transition: all 1s ease-out;
 }
+
 .imgDiv > img {
   box-shadow: 0px 5px 50px rgba(17, 16, 16, 0.736);
-  /* box-shadow: 10px 10px 40px black; */
-
   border-radius: 15%;
-  /* box-shadow: 0px 10px 250px rgba(122, 5, 5, 0.23); */
-
   max-width: 100%;
   min-height: 350px;
   max-height: 500px;
 }
-.infosec {
-  min-width: 100%;
-  display: flex;
-  border-bottom: 2px solid white;
+
+.visible .info {
+  opacity: 1;
+  transform: translateX(0);
 }
+
+.visible .imgDiv {
+  opacity: 1;
+  transform: translateX(0);
+}
+
 @media (min-width: 768px) {
   .infosec {
     flex-direction: row;
@@ -56,7 +93,6 @@
     flex-direction: row;
   }
   .info {
-    font-size: 0.7em;
     margin: 5%;
     max-width: 30%;
     text-align: left;
@@ -66,6 +102,11 @@
   }
   .imgDiv {
     min-width: 30%;
-    margin: 5%;
+  }
+}
+
+@media (max-width: 768px) {
+  .info {
+    max-width: 80%;
   }
 }

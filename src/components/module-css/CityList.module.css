@@ -1,0 +1,33 @@
+/* src/components/CityList.module.scss */
+.cityList {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1f1f1f;
+  color: white;
+  font-size: clamp(18px, 2vw, 36px);
+  /* padding: 20px; */
+  text-align: center;
+
+  h2 {
+    margin-bottom: 20px;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    list-style: none;
+    padding: 0;
+
+    li {
+      cursor: pointer;
+      margin: 8px 0;
+      transition: color 0.5s;
+
+      &:hover {
+        color: #e3000f;
+      }
+    }
+  }
+}

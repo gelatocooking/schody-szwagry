@@ -1,30 +1,28 @@
-import style from "./module-css/Card.module.css";
-import png from "../assets/projects-1.jpg";
 import React from "react";
-// import styled from "styled-components";
-
+import style from "./module-css/Card.module.css";
 
 interface CardProps {
-
-      name:string;
-      icon:string;
-      text:string;
-      
-
-
+  name: string;
+  icon: string;
+  text: string;
 }
 
-const Card : React.FC<CardProps>= (props) => {
+const Card: React.FC<CardProps> = ({ name, icon, text }) => {
   return (
     <button
       className={style.Card}
-     
+      aria-label={`Przejdź do sekcji ${name}`}
     >
-      <span>{props.name}</span>
-      <img className={style.cardIcon} src={props.icon}></img>
-      {/* <img className={style.cardBackground} src={png}></img> */}
-      <p>{props.text}</p>
+      <span className={style.cardTitle}>{name}</span>
+      <img
+        className={style.cardIcon}
+        src={icon}
+        alt={`${name} ikona`}
+        loading="lazy"
+      />
+      <p className={style.cardText}>{text}</p>
     </button>
   );
 };
+
 export default Card;

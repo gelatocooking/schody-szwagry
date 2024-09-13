@@ -83,7 +83,6 @@
 }
 @media (max-width: 1200px) {
   .info {
-    font-size: 1.4em;
   }
   .imageDiv > .img {
     min-width: 350px;
@@ -94,12 +93,10 @@
 }
 @media (max-width: 944px) {
   .info {
-    font-size: 1.2em;
   }
 }
 @media (max-width: 880px) {
   .info {
-    font-size: 1em;
   }
   .imageDiv > .img {
     min-width: 300px;

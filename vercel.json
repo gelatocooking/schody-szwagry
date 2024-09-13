@@ -1,16 +1,17 @@
 {
-      "version": 2,
-      "builds": [
-        {
-          "src": "package.json",
-          "use": "@vercel/static-build",
-          "config": {
-            "distDir": "build"
-          }
-        }
-      ],
-      "routes": [
-        { "src": "/(.*)", "dest": "/index.html" }
-      ]
+  "routes": [
+    {
+      "src": "/manifest.json",
+      "dest": "/public/manifest.json",
+      "headers": {
+        "X-Powered-By": "CustomServer",
+        "Content-Security-Policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self';",
+        "Strict-Transport-Security": "max-age=63072000; includeSubDomains; preload",
+        "X-Content-Type-Options": "nosniff",
+        "X-Frame-Options": "DENY",
+        "X-XSS-Protection": "1; mode=block",
+        "Referrer-Policy": "no-referrer"
+      }
     }
-    
+  ]
+}
