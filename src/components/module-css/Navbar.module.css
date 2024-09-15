@@ -6,7 +6,7 @@ nav {
   gap: 50px;
   max-width: 100%;
   background-color: #1f1f1f;
-  border-bottom: 1px double rgba(255, 255, 255, 0.644);
+  border-bottom: 1px double rgb(255, 255, 255);
   color: white;
   transition: background-color 0.3s ease;
 }
@@ -21,7 +21,7 @@ nav a {
 
 .logoContainer {
   display: flex;
-  max-width: 30%;
+  max-width: 25%;
   max-height: 20%;
   justify-content: center;
   align-items: center;

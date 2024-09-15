@@ -1,0 +1,86 @@
+/* Główne style sekcji */
+.woodTypes {
+  padding: 4rem 2rem;
+  background-color: #171717;
+}
+
+.woodTypes h2 {
+  font-family: "Playfair Display", serif;
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: aliceblue;
+}
+
+/* Grid ustawienia */
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+/* Style dla każdego typu drewna */
+.woodType {
+  background-color: #171717;
+  padding: 2rem;
+  border-radius: 15px;
+  text-align: center;
+  max-width: 300px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.woodType:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Styl ikon */
+.iconWrapper {
+  background-color: #ff7f50;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin: 0 auto 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon {
+  color: #fff;
+  font-size: 2rem;
+}
+
+/* Style obrazów */
+.woodType img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+/* Style nagłówków i tekstu */
+.woodType h3 {
+  font-size: 1.8rem;
+  margin-top: 1rem;
+  color: aliceblue;
+}
+
+.woodType p {
+  font-size: 1rem;
+  margin-top: 0.5rem;
+  color: aliceblue;
+}
+
+/* Responsywność */
+@media (max-width: 768px) {
+  .grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .woodType {
+    max-width: 100%;
+  }
+}

@@ -1,0 +1,138 @@
+.faqSection {
+  padding: 3rem;
+  background-color: #1f1f1f;
+  border-radius: 12px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+  animation: fadeInUp 1.2s ease-out;
+}
+
+.heading {
+  font-family: "Playfair Display", serif;
+  font-size: 2.5rem;
+  color: aliceblue;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.faq {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.question {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem;
+  background-color: #2c2c2c;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  color: aliceblue;
+}
+
+.question:hover {
+  background-color: #3a3a3a;
+}
+
+.active {
+  background-color: #3a3a3a;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.icon {
+  font-size: 2rem;
+  color: #ff7f50;
+  margin-right: 1rem;
+}
+
+.arrowIcon {
+  font-size: 1.5rem;
+  color: aliceblue;
+  transition: transform 0.3s ease;
+}
+
+.answer {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.6s ease, opacity 0.6s ease;
+}
+
+.open {
+  max-height: 300px; /* Dostosowanie do zawartości */
+  opacity: 1;
+}
+
+p {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  margin-top: 1rem;
+}
+
+/* Animacja wchodzenia sekcji */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsywność */
+@media (max-width: 768px) {
+  .faqSection {
+    padding: 2rem;
+  }
+
+  .heading {
+    font-size: 2rem;
+  }
+
+  h3 {
+    font-size: 1.4rem;
+  }
+
+  p {
+    font-size: 1.1rem;
+  }
+
+  .icon {
+    font-size: 1.8rem;
+  }
+
+  .arrowIcon {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .heading {
+    font-size: 1.8rem;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  .icon {
+    font-size: 1.5rem;
+  }
+
+  .arrowIcon {
+    font-size: 1rem;
+  }
+}

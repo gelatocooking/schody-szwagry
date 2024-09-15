@@ -1,0 +1,125 @@
+.processSection {
+  padding: 3rem;
+  background-color: #1f1f1f;
+  border-radius: 12px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  animation: fadeInUp 1.2s ease-out;
+}
+
+.heading {
+  font-family: "Playfair Display", serif;
+  font-size: 2.5rem;
+  color: aliceblue;
+  margin-bottom: 2rem;
+}
+
+.steps {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.step {
+  flex: 1;
+  padding: 2rem;
+  text-align: center;
+  background-color: #171717;
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.step:hover {
+  transform: translateY(-10px);
+  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.icon {
+  font-size: 3rem;
+  color: #ff7f50;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: aliceblue;
+}
+
+/* Animacja wchodzenia sekcji */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsywność */
+
+/* Tablety */
+@media (max-width: 1024px) {
+  .steps {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .step {
+    padding: 1.5rem;
+  }
+
+  .icon {
+    font-size: 2.5rem;
+  }
+
+  h3 {
+    font-size: 1.3rem;
+  }
+}
+
+/* Smartfony */
+@media (max-width: 768px) {
+  .processSection {
+    padding: 2rem;
+  }
+
+  .heading {
+    font-size: 2rem;
+  }
+
+  .step {
+    padding: 1rem;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+  }
+
+  .icon {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .heading {
+    font-size: 1.8rem;
+  }
+
+  .step {
+    padding: 0.8rem;
+  }
+
+  h3 {
+    font-size: 1rem;
+  }
+
+  .icon {
+    font-size: 1.8rem;
+  }
+}
