@@ -51,7 +51,7 @@ strong {
 }
 @media (max-width: 1070px) {
   .App {
-    /* font-size: 32px; */
+    /*   -size: 32px; */
   }
 }
 @media (max-width: 768px) {
