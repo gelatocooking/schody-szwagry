@@ -1,6 +1,7 @@
 import React from 'react';
 import { FaTools, FaCogs } from 'react-icons/fa'; // Importujemy ikony
 import styles from './module-css/TechnologySection.module.css';
+import png from '../../assets/1.jpg'
 
 export const TechnologySection: React.FC = () => {
   return (
@@ -11,17 +12,9 @@ export const TechnologySection: React.FC = () => {
           <FaCogs className={styles.icon} />
           <p>Nasza firma wykorzystuje najnowocześniejsze technologie, aby zapewnić najwyższą jakość i precyzję produkcji. Dzięki temu nasze schody są trwałe, estetyczne i funkcjonalne.</p>
         </div>
-        <div className={styles.video}>
-          <FaTools className={styles.icon} />
-          <iframe
-            width="560"
-            height="315"
-            src="https://www.youtube.com/embed/example" // Example video link
-            title="Technologia produkcji"
-            frameBorder="0"
-            allowFullScreen
-            className={styles.videoFrame}
-          />
+        <div className={styles.image}>
+          {/* <FaTools className={styles.icon} /> */}
+          <img className={styles.videoFrame} src={png} alt="Schody drewniane" width="450" height="600" />
         </div>
       </div>
     </section>

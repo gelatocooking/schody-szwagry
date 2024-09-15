@@ -5,6 +5,7 @@
 }
 .home {
   overflow: hidden;
+  scroll-behavior: smooth;
 }
 .home p {
   /* background-color: #00000096; */

@@ -1,6 +1,6 @@
 .aestheticsSection {
   padding: 3rem;
-  background-color: #1f1f1f;
+  background-color: #171717;
   text-align: center;
   border-radius: 12px;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
@@ -44,7 +44,7 @@
 
 .icon {
   font-size: 3rem;
-  color: #ff7f50;
+  color: #e3000f;
   margin-bottom: 1rem;
 }
 
@@ -57,7 +57,7 @@ h3 {
 }
 
 .style:hover h3 {
-  color: #ff7f50;
+  color: #e3000f;
 }
 
 /* Animacja wchodzenia sekcji */

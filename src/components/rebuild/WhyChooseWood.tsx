@@ -5,7 +5,7 @@ import photo from '../../assets/projekty/projects-d-2.webp';
 
 export const WhyChooseWood: React.FC = () => {
   return (
-    <section className={styles.whyChooseWood} aria-labelledby="wood-section-title">
+    <section id='whywood' className={styles.whyChooseWood} aria-labelledby="wood-section-title">
       <div className={styles.content}>
         {/* Tekst opisujący zalety schodów drewnianych */}
         <div className={styles.text}>

@@ -20,7 +20,7 @@ export const HeroSection: FC = () => {
 
         {/* CTA Button */}
         <a
-          href="/#offer"
+          href="#whywood"
           className={styles.ctaButton}
           aria-label="Sprawdź naszą ofertę schodów drewnianych"
         >

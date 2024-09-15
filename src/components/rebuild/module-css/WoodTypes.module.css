@@ -22,7 +22,7 @@
 
 /* Style dla każdego typu drewna */
 .woodType {
-  background-color: #171717;
+  background-color: #1f1f1f;
   padding: 2rem;
   border-radius: 15px;
   text-align: center;
@@ -37,7 +37,7 @@
 
 /* Styl ikon */
 .iconWrapper {
-  background-color: #ff7f50;
+  background-color: #e3000f;
   width: 60px;
   height: 60px;
   border-radius: 50%;
