@@ -1,8 +1,8 @@
 import React from 'react';
 import { FaTree, FaCogs, FaShapes } from 'react-icons/fa'; // Import ikon
 import styles from './module-css/AestheticsSection.module.css';
-import png1 from '../../assets/projekty/projects-d-3.webp';
-import png2 from '../../assets/projekty/projects-d-4.webp';
+import png1 from '../../assets/projekty/projects-d-4.webp';
+import png2 from '../../assets/projekty/projects-t-4.webp';
 import png3 from '../../assets/projekty/projects-d-5.webp';
 
 export const AestheticsSection: React.FC = () => {
